@@ -56,7 +56,8 @@ const repWithPics = representatives.map(rep=>{
 let pictureDiv = document.querySelector('container')
 
 senWithPics.forEach(senator =>{
-  let mainContainer = document.createElement('div')
+
+  
   let senatorPic = document.createElement( 'img')
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
