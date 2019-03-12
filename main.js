@@ -38,7 +38,7 @@ const testArray = [5,10,15,20,25]
 const testResults = testArray.reduce((acc,num)=> {
 return acc + num
 },0 )
-console.log(testArray)
+
 
 
 //  trying to make the pictures of senators
@@ -47,15 +47,14 @@ const senWithPics = senators.map(senator =>{
   senator.imgURL = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}.jpg`
   return senator 
 })
-const repWithPics = representatives.map(rep=>{
-  rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
-})
+// const repWithPics = representatives.map(rep=>{
+//   rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
+// })
 // senator Palpatiene `https://starwars-visualguide.com/assets/img/characters/21.jpg`,
   
-const mainContainer = document.createElement('div')
-mainContainer.className = 'container'
-let pictureDiv = document.querySelector(.container)
 
+let pictureDiv = document.querySelector('.container')
+console.log(senWithPics)
 senWithPics.forEach(senator =>{
 
   
@@ -63,11 +62,11 @@ senWithPics.forEach(senator =>{
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
 
-  senatorPic.src = senator.imageURL
+  senatorPic.src = senator.imgURL
 
   senatorFigCap.textContent = `${senator.first_name} ${senator.last_name}`
-  senatorFig.appendChild(senatePic)
-  senatorFig.appendChild(senatorCap)
+  senatorFig.appendChild(senatorPic)
+  senatorFig.appendChild(senatorFigCap)
   pictureDiv.appendChild(senatorFig)
 
 })
