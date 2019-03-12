@@ -52,8 +52,9 @@ const repWithPics = representatives.map(rep=>{
 })
 // senator Palpatiene `https://starwars-visualguide.com/assets/img/characters/21.jpg`,
   
-
-let pictureDiv = document.querySelector('container')
+const mainContainer = document.createElement('div')
+mainContainer.className = 'container'
+let pictureDiv = document.querySelector(.container)
 
 senWithPics.forEach(senator =>{
 
@@ -62,11 +63,13 @@ senWithPics.forEach(senator =>{
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
 
+  senatorPic.src = senator.imageURL
+
   senatorFigCap.textContent = `${senator.first_name} ${senator.last_name}`
   senatorFig.appendChild(senatePic)
   senatorFig.appendChild(senatorCap)
   pictureDiv.appendChild(senatorFig)
 
 })
-document.appendChild(senWithPics)
+
 
