@@ -49,14 +49,16 @@ const simpleSen = senators.map(senator =>{
 })
 const createCardSen = ((senatorArray)=>{
   removeCards()
-  // let filterButtons = document.createElement('div')
-  // filterButtons.className = "button_section"
+  let filterButtons = document.createElement('div')
+  filterButtons.className = "button_section"
 let filterButtonR = document.createElement('button')
-filterButtonR.className = 'button republic'
+filterButtonR.id = 'republic'
 filterButtonR.textContent = 'Republicans'
 let filterButtonD = document.createElement('button')
 filterButtonD.textContent = 'Democrats'
-filterButtonD.className = ('button democrat')
+filterButtonD.id = ('democrat')
+filterButtonD.className = ('button')
+filterButtonR.className = ('button')
 
 
   senatorArray.forEach((senator)=>{
@@ -87,14 +89,15 @@ filterButtonD.className = ('button democrat')
  personName.textContent = senator.first_name +" " + senator.last_name
 // personElement.textContent = senator.name
 // imageElement.src = senator.imgURL
-button_section.appendChild(filterButtonD)
-button_section.appendChild(filterButtonR)
-document.body.appendChild(button_section)
+
 personElement.appendChild(personName)
 personElement.appendChild(imageElement)
 mainContainer.appendChild(personElement)
 
   })
+  filterButtons.appendChild(filterButtonD)
+  filterButtons.appendChild(filterButtonR)
+  mainContainer.appendChild(filterButtons)
 })
 
 const createCardRep = ((repArray)=>{
@@ -134,6 +137,10 @@ const repWithPics = representatives.map(rep=>{
 //variables to make the buttons later
 var allSenators = document.getElementById('senators')
 var allReps = document.getElementById('reps')
+var allDems = document.getElementById('democrats')
+var allRepubs = document.getElementById('republican')
 
 allSenators.addEventListener('click', createCardSen.bind(this, senators))
 allReps.addEventListener('click', createCardRep.bind(this, representatives));
+
+allDems.addEventListener('click', createCards.bind(this, democrats))
