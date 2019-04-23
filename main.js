@@ -44,6 +44,7 @@ return acc + num
 //  trying to make the pictures of senators
 
 const senWithPics = senators.map(senator =>{
+  
   senator.imgURL = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}.jpg`
   return senator 
 })
@@ -51,7 +52,11 @@ const senWithPics = senators.map(senator =>{
 //   rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
 // })
 // senator Palpatiene `https://starwars-visualguide.com/assets/img/characters/21.jpg`,
-  
+  function Palpatiene(){
+    if (senWithPics === false){
+      senator.imgURL = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
+    }else return senator
+  }
 
 let pictureDiv = document.querySelector('.container')
 console.log(senWithPics)
@@ -62,7 +67,16 @@ senWithPics.forEach(senator =>{
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
 
-  senatorPic.src = senator.imgURL
+  // senatorPic.src = senator.imgURL
+  
+  if(senator.imgURL ===`https://www.congress.gov/img/member/j000300.jpg`){
+    senatorPic.src = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
+  }
+  else if (senator.imgURL === `https://www.congress.gov/img/member/s001203.jpg`)
+  {
+    senatorPic.src = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
+  } else senatorPic.src = senator.imgURL
+  
 
   senatorFigCap.textContent = `${senator.first_name} ${senator.last_name}`
   senatorFig.appendChild(senatorPic)
