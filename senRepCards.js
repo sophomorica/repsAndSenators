@@ -46,17 +46,28 @@ const simpleSen = senators.map(senator =>{
 })
 const createCardSen = ((senatorArray)=>{
   removeCards()
+let filterButtonR = document.createElement('button')
+filterButtonR.className = 'button republic'
+filterButtonR.textContent = 'Republicans'
+let filterButtonD = document.createElement('button')
+filterButtonD.textContent = 'Democrats'
+filterButtonD.className = ('button democrat')
+
 
   senatorArray.forEach((senator)=>{
     let personElement = document.createElement('div')
     let personName = document.createElement ('p')
     let imageElement = document.createElement ('img')
 
+
     if(senator.party === "R"){
       personElement.className = "box republican personBox"
     }
     if(senator.party ==="D"){
       personElement.className = "box democrat personBox"
+    }
+    if(senator.party ==="ID"){
+      personElement.className = "box personBox"
     }
 
     if(senator.imgURL ===`https://www.congress.gov/img/member/j000300.jpg`){
@@ -90,11 +101,9 @@ const createCardRep = ((repArray)=>{
     if(rep.party ==="D"){
       personElement.className = "box democrat personBox"
     }
+  
    
-    $('img').on("error", function() {
-      $(this).attr('src', '/images/missing.png');
-    });
-    
+  
     imageElement.src = rep.imgURL
     personName.textContent = rep.first_name + " " + rep.last_name
     personElement.appendChild(personName)

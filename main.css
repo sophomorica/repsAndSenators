@@ -1,10 +1,26 @@
 .container {
   display:flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap:wrap;
   text-align: center;
   
 }
+.container.div{
+  padding: 10px;
+}
 img{
   height: 150px;
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.democrat:hover{
+  box-shadow: 2px 2px 2px blue;
+}
+.republican:hover{
+  box-shadow: 2px 2px 2px red;
+}
+.box{
+  margin: 20px
 }
