@@ -59,9 +59,9 @@ const senWithPics = senators.map(senator =>{
   senator.imgURL = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}.jpg`
   return senator 
 })
-// const repWithPics = representatives.map(rep=>{
-//   rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
-// })
+const repWithPics = representatives.map(rep=>{
+  rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
+})
 // senator Palpatiene `https://starwars-visualguide.com/assets/img/characters/21.jpg`,
  
 
@@ -69,9 +69,17 @@ let pictureDiv = document.querySelector('.container')
 console.log(senWithPics)
 
 
+function cardFront(senatorData) {
+  let cardFront = document.createElement("div");
+  cardFront.className = "card__face card__face--front";
+  let figure = document.createElement("figure");
+  let caption = document.createElement("figcaption");
+  let image = document.createElement("img");
+  image.className = "senatorImage";
+
 senWithPics.forEach(senator =>{
 
-  
+  let senatorElement = document.createElement('div')
   let senatorPic = document.createElement( 'img')
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
