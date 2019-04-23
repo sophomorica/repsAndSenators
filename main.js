@@ -4,6 +4,17 @@ import{ representatives } from './representatives.js'
 console.log(senators)
 //filter examples
 
+// functions
+const removeCards = () => {
+  let removeDiv = document.querySelector(".container");
+  while (removeDiv.firstChild) {
+      removeDiv.removeChild(removeDiv.firstChild);
+  }
+}
+
+
+
+//variables----------
 
 const democrats = senators.filter(senator => {
   return senator.party === 'D' 
@@ -20,7 +31,7 @@ const simpleReps = representatives.map(rep => {
 
   }
 })
-console.log(simpleReps)
+// console.log(simpleReps)
 
 //template literals or string templates are the ${string} it can let you insert a variable within a string when you are trying to return a string value.
 
@@ -52,14 +63,12 @@ const senWithPics = senators.map(senator =>{
 //   rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rept.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
 // })
 // senator Palpatiene `https://starwars-visualguide.com/assets/img/characters/21.jpg`,
-  function Palpatiene(){
-    if (senWithPics === false){
-      senator.imgURL = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
-    }else return senator
-  }
+ 
 
 let pictureDiv = document.querySelector('.container')
 console.log(senWithPics)
+
+
 senWithPics.forEach(senator =>{
 
   
@@ -67,7 +76,7 @@ senWithPics.forEach(senator =>{
   let senatorFig = document.createElement('figure')
   let senatorFigCap= document.createElement('figcaption')
 
-  // senatorPic.src = senator.imgURL
+
   
   if(senator.imgURL ===`https://www.congress.gov/img/member/j000300.jpg`){
     senatorPic.src = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
