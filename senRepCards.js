@@ -15,15 +15,27 @@ const removeCards = () => {
       removeDiv.removeChild(removeDiv.firstChild);
   }
 }
-const createCards = ((personArray)=>{
+const createCardSen = ((senatorArray)=>{
   removeCards()
 
-  personArray.forEach((person)=>{
+  senatorArray.forEach((senator)=>{
     let personElement = document.createElement('div')
-    let personName = document.createElement ('p')
+    // let personName = document.createElement ('p')
     let imageElement = document.createElement ('img')
 
+    // if (senator.party === 'R'){
+    //   senator.personElement.className = 'box republic personBox'
+    // }
+    // if (senator.party === 'D'){
+    //   senator.personElement.className = 'box democrat personBox'
+    // }
 
+personElement.textContent = senator.name
+imageElement.src = senator.imagePath
+
+
+personElement.appendChild(imageElement)
+mainContainer.appendChild(personElement)
   })
 })
 
@@ -56,6 +68,7 @@ const simpleSen = senators.map(senator =>{
     imagePath: `https://www.congress.gov/img/member/${senator.id.toLowerCase()}.jpg`
   }
 })
+
 // console.log(simpleSen)
 const senWithPics = senators.map(senator =>{
   
@@ -71,4 +84,6 @@ const repWithPics = representatives.map(rep=>{
 //variables to make the buttons later
 var allSenators = document.getElementById('senators')
 var allReps = document.getElementById('reps')
+
+allSenators.addEventListener('click', createCardSen.bind(this, senators))
 
