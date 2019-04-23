@@ -7,6 +7,9 @@ const mainContainer = document.createElement('div')
 mainContainer.className = 'container'
 document.body.appendChild(mainContainer)
 
+const button_section = document.getElementsByClassName('button-section')
+
+
 
 //function---------------------
 const removeCards = () => {
@@ -46,6 +49,8 @@ const simpleSen = senators.map(senator =>{
 })
 const createCardSen = ((senatorArray)=>{
   removeCards()
+  // let filterButtons = document.createElement('div')
+  // filterButtons.className = "button_section"
 let filterButtonR = document.createElement('button')
 filterButtonR.className = 'button republic'
 filterButtonR.textContent = 'Republicans'
@@ -82,10 +87,13 @@ filterButtonD.className = ('button democrat')
  personName.textContent = senator.first_name +" " + senator.last_name
 // personElement.textContent = senator.name
 // imageElement.src = senator.imgURL
-
+button_section.appendChild(filterButtonD)
+button_section.appendChild(filterButtonR)
+document.body.appendChild(button_section)
 personElement.appendChild(personName)
 personElement.appendChild(imageElement)
 mainContainer.appendChild(personElement)
+
   })
 })
 
