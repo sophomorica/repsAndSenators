@@ -69,13 +69,13 @@ let pictureDiv = document.querySelector('.container')
 console.log(senWithPics)
 
 
-function cardFront(senatorData) {
-  let cardFront = document.createElement("div");
-  cardFront.className = "card__face card__face--front";
-  let figure = document.createElement("figure");
-  let caption = document.createElement("figcaption");
-  let image = document.createElement("img");
-  image.className = "senatorImage";
+// function cardFront(senatorData) {
+//   let cardFront = document.createElement("div");
+//   cardFront.className = "card__face card__face--front";
+//   let figure = document.createElement("figure");
+//   let caption = document.createElement("figcaption");
+//   let image = document.createElement("img");
+//   image.className = "senatorImage";
 
 senWithPics.forEach(senator =>{
 
