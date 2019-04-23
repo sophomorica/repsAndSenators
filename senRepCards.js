@@ -77,7 +77,27 @@ personElement.appendChild(imageElement)
 mainContainer.appendChild(personElement)
   })
 })
-// console.log(simpleSen)
+
+const createCardRep = ((repArray)=>{
+  removeCards()
+  repArray.forEach((rep)=>{
+    let personElement = document.createElement('div')
+    let personName = document.createElement ('p')
+    let imageElement = document.createElement ('img')
+    if(rep.party === "R"){
+      personElement.className = "box republican personBox"
+    }
+    if(rep.party ==="D"){
+      personElement.className = "box democrat personBox"
+    }
+    imageElement.src = rep.imgURL
+    personName.textContent = rep.first_name + " " + rep.last_name
+    personElement.appendChild(personName)
+    personElement.appendChild(imageElement)
+    mainContainer.appendChild(personElement)
+      })
+
+  })
 const senWithPics = senators.map(senator =>{
   
   senator.imgURL = `https://www.congress.gov/img/member/${senator.id.toLowerCase()}.jpg`
@@ -94,4 +114,4 @@ var allSenators = document.getElementById('senators')
 var allReps = document.getElementById('reps')
 
 allSenators.addEventListener('click', createCardSen.bind(this, senators))
-
+allReps.addEventListener('click', createCardRep.bind(this, representatives));
