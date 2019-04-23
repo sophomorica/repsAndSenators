@@ -76,7 +76,7 @@ console.log(senWithPics)
 //   let caption = document.createElement("figcaption");
 //   let image = document.createElement("img");
 //   image.className = "senatorImage";
-
+function renderPictures(peopleArray){
 senWithPics.forEach(senator =>{
 
   let senatorElement = document.createElement('div')
@@ -101,5 +101,5 @@ senWithPics.forEach(senator =>{
   pictureDiv.appendChild(senatorFig)
 
 })
-
+}
 
