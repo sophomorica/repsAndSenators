@@ -90,10 +90,11 @@ const createCardRep = ((repArray)=>{
     if(rep.party ==="D"){
       personElement.className = "box democrat personBox"
     }
+   
     $('img').on("error", function() {
       $(this).attr('src', '/images/missing.png');
     });
-
+    
     imageElement.src = rep.imgURL
     personName.textContent = rep.first_name + " " + rep.last_name
     personElement.appendChild(personName)
