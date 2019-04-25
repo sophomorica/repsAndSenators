@@ -10,8 +10,9 @@
 }
 
 img{
-  height: 150px;
-  width: 120px;
+  height: 290px;
+  width: 240x;
+
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -27,12 +28,17 @@ img{
 }
 .personBox p{
   flex-wrap: wrap;
-  width: 30px;
- 
+  /* width:80%; */
+  padding: .75rem;
+  /* padding: 12px; */
+  text-align: center;
 }
 .personBox{
   text-align: center;
 }
 div{
+  text-align: center;
+}
+*{
   text-align: center;
 }
