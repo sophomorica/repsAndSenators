@@ -47,23 +47,29 @@ const simpleSen = senators.map(senator =>{
   }
 })
 
+
 //-------Functions to create the cards------------------------------------
 const createCardSen = ((senatorArray)=>{
   removeCards()
-  let filterButtons = document.createElement('div')
-  filterButtons.className = "button_section"
-let filterButtonR = document.createElement('button')
-filterButtonR.id = 'republic'
-filterButtonR.textContent = 'Republicans'
-let filterButtonD = document.createElement('button')
-filterButtonD.textContent = 'Democrats'
-filterButtonD.id = ('democrat')
-filterButtonD.className = ('button is-info')
-filterButtonR.className = ('button is-danger')
 
-filterButtons.appendChild(filterButtonD)
-filterButtons.appendChild(filterButtonR)
-mainContainer.appendChild(filterButtons)
+  //----------I wanted to create buttons dynamically but found out that the since the java script can't find the buttons before they are created I couldn't add any event listeners to it....perhaps node does-------------
+
+//   let filterButtons = document.createElement('div')
+//   filterButtons.className = "button_section"
+// let filterButtonR = document.createElement('button')
+// filterButtonR.id = 'republic'
+// filterButtonR.textContent = 'Republicans'
+// let filterButtonD = document.createElement('button')
+// filterButtonD.textContent = 'Democrats'
+// filterButtonD.id = ('D')
+// filterButtonD.className = ('button is-info')
+// filterButtonR.className = ('button is-danger')
+
+// filterButtons.appendChild(filterButtonD)
+// filterButtons.appendChild(filterButtonR)
+// mainContainer.appendChild(filterButtons)
+
+//------------------------------end--------------------------
 
   senatorArray.forEach((senator)=>{
     let personElement = document.createElement('div')
@@ -133,14 +139,32 @@ const repWithPics = representatives.map(rep=>{
   rep.imgURL = `https://www.congress.gov/img/member/114_rp_${rep.state.toLowerCase()}_${rep.district}_${rep.last_name.toLocaleLowerCase()}_${rep.first_name.toLowerCase()}_200.jpg`
 })
 
-
+// function renderPictures(peopleArray) {
+//   peopleArray.forEach(senator => {
+//   let senatorPic = document.createElement('img')
+//   let senatorFig = document.createElement('figure')
+//   let senatorCap = document.createElement('figcaption')
+//   senatorCap.textContent = `${senator.name}`
+//   senatorPic.src = senator.imgURL
+//   senatorFig.appendChild(senatorPic)
+//   senatorFig.appendChild(senatorCap)
+//   mainContainer.appendChild(senatorFig)
+// })
+// }
 //variables to make the buttons later
 var allSenators = document.getElementById('senators')
 var allReps = document.getElementById('reps')
-var allDems = document.getElementById('democrat')
-var allRepubs = document.getElementById('republic')
+var allDems = document.querySelector('#D')
+var allRepubs = document.getElementById('R')
 
 allSenators.addEventListener('click', createCardSen.bind(this, senators))
-allReps.addEventListener('click', createCardRep.bind(this, representatives));
+allReps.addEventListener('click', createCardRep.bind(this, representatives))
 
-// allDems.addEventListener('click', createCards.bind(this, democratFilter))
+allDems.addEventListener('click', function(){
+  removeCards()
+  createCardSen(democratFilter)
+})
+allRepubs.addEventListener('click', function(){
+  removeCards()
+  createCardSen(republicanFilter)
+})
