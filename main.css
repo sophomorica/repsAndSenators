@@ -25,3 +25,14 @@ img{
 .box{
   margin: 20px
 }
+.personBox p{
+  flex-wrap: wrap;
+  width: 30px;
+ 
+}
+.personBox{
+  text-align: center;
+}
+div{
+  text-align: center;
+}
