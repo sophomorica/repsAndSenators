@@ -203,9 +203,10 @@ allRepDBtn.addEventListener('click', function(){
   createCardRep(demFilterReps)
 })
 const removeBtns = () => {
-  let removeBtnDiv = document.querySelector(".senatorFilterBtns");
+  let hidden = document.getElementById("D");
+  let removeBtnDiv = document.querySelector(".senatorFilterBtns")
   while (removeBtnDiv.firstChild) {
-      removeBtnDiv.toggle('is-hidden');
+      hidden.classList.toggle('is-hidden');
   }
 }
 clearBtn.addEventListener('click',function(){
