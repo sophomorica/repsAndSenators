@@ -193,7 +193,7 @@ allDems.addEventListener('click', function(){
 allRepubs.addEventListener('click', function(){
   removeCards()
   createCardSen(republicanFilter)
-  removeBtns()
+  
 })
 allRepRBtn.addEventListener('click', function(){
   removeCards()
@@ -217,7 +217,10 @@ const removeBtns = () => {
       hiddenD.classList.add('is-hidden')
       hiddenR.classList.add('is-hidden')
   }
-   
+   if (removeRepBtnDiv.firstChild){
+     hiddenRep.classList.add('is-hiddenR')
+     hiddenDem.classList.add('is-hiddenR')
+   }
 }
 clearBtn.addEventListener('click',function(){
   removeCards()
