@@ -193,6 +193,7 @@ allDems.addEventListener('click', function(){
 allRepubs.addEventListener('click', function(){
   removeCards()
   createCardSen(republicanFilter)
+  removeBtns()
 })
 allRepRBtn.addEventListener('click', function(){
   removeCards()
@@ -203,11 +204,20 @@ allRepDBtn.addEventListener('click', function(){
   createCardRep(demFilterReps)
 })
 const removeBtns = () => {
-  let hidden = document.getElementById("D");
-  let removeBtnDiv = document.querySelector(".senatorFilterBtns")
-  while (removeBtnDiv.firstChild) {
-      hidden.classList.toggle('is-hidden');
+  let hiddenD = document.getElementById("D");
+  let hiddenR = document.getElementById("R");
+  let hiddenRep = document.getElementById('r')
+  let hiddenDem = document.getElementById('d')
+  let removeRepBtnDiv = document.querySelector('repBtns')
+  let removeSenBtnDiv = document.querySelector(".senatorFilterBtns")
+  
+  
+  if (removeSenBtnDiv.firstChild) {
+      // hidden.classList.toggle('is-hidden');
+      hiddenD.classList.add('is-hidden')
+      hiddenR.classList.add('is-hidden')
   }
+   
 }
 clearBtn.addEventListener('click',function(){
   removeCards()
