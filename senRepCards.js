@@ -25,6 +25,12 @@ const democratFilter = senators.filter(senator => {
 })
 const republicanFilter = senators.filter(senator => senator.party === 'R')
 
+const demFilterReps = representatives.filter(represent => {
+  return represent.party ==='D'
+})
+const repFilterReps = representatives.filter(represent => {
+  return represent.party ==='R'
+})
 //making a more digestable array of information--------------------------
 
 const simpleReps = representatives.map(rep => {
@@ -169,4 +175,12 @@ allDems.addEventListener('click', function(){
 allRepubs.addEventListener('click', function(){
   removeCards()
   createCardSen(republicanFilter)
+})
+allRepRBtn.addEventListener('click', function(){
+  removeCards()
+  createCardRep(repFilterReps)
+})
+allRepDBtn.addEventListener('click', function(){
+  removeCards()
+  createCardRep(demFilterReps)
 })
