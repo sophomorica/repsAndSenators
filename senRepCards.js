@@ -13,12 +13,18 @@ const button_section = document.getElementsByClassName('button-section')
 
 //function---------------------
 const removeCards = () => {
+  // let removeRBanner = document.querySelector(".house")
+  // let removeSBanner = document.querySelector(".senate")
   let removeDiv = document.querySelector(".container");
+  // if  (removeSBanner.classList !== 'sBanner-hidden'){
+  //   removeSBanner.className.add('sBanner-hidden')
+  // } 
+  
   while (removeDiv.firstChild) {
       removeDiv.removeChild(removeDiv.firstChild);
   }
 }
-// const eraseFunction
+
 //-----------------Filters-----------------------------------------------
 const democratFilter = senators.filter(senator => {
   return senator.party === 'D' 
@@ -53,10 +59,19 @@ const simpleSen = senators.map(senator =>{
   }
 })
 
+function cardFront (senatorArray){
+  let cardFront = document.createElement("div");
+  cardFront.className = "card__face card__face--front";
+  let figure = document.createElement("figure");
+  let caption = document.createElement("figcaption");
+  let image = document.createElement("img");
+  image.className = "senateImage";
+}
 
 //-------Functions to create the cards------------------------------------
 const createCardSen = ((senatorArray)=>{
   removeCards()
+  revealSBanner()
 
   //----------I wanted to create buttons dynamically but found out that the since the java script can't find the buttons before they are created I couldn't add any event listeners to it....perhaps node does-------------
 
@@ -113,13 +128,22 @@ mainContainer.appendChild(personElement)
   })
  
 })
-
+const revealRBanner = () => {
+  let rBanner = document.querySelector('.house')
+  rBanner.classList.toggle('rBanner-hide')
+ }
+ const revealSBanner = () => {
+  let rBanner = document.querySelector('.senate')
+  rBanner.classList.toggle('sBanner-hide')
+ }
 const createCardRep = ((repArray)=>{
   removeCards()
+  revealRBanner()
   repArray.forEach((rep)=>{
     let personElement = document.createElement('div')
     let personName = document.createElement ('p')
     let imageElement = document.createElement ('img')
+    
     if(rep.party === "R"){
       personElement.className = "box republican personBox"
     }
@@ -127,11 +151,13 @@ const createCardRep = ((repArray)=>{
       personElement.className = "box democrat personBox"
     }
 
+   
     imageElement.src = rep.imgURL
     personName.textContent = rep.first_name + " " + rep.last_name
     personElement.appendChild(personName)
     personElement.appendChild(imageElement)
     mainContainer.appendChild(personElement)
+  
       })
 
   })
