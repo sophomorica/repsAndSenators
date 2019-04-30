@@ -109,7 +109,7 @@ const createCardSen = ((senatorArray)=>{
 
 //------------------------------end--------------------------
 
-  senatorArray.forEach((senator)=>{
+  simpleSen.forEach((senator)=>{
     let personElement = document.createElement('div')
     let personName = document.createElement ('p')
     let imageElement = document.createElement ('img')
@@ -132,7 +132,7 @@ const createCardSen = ((senatorArray)=>{
      {
       imageElement.src = `https://starwars-visualguide.com/assets/img/characters/21.jpg`
      } else 
-    imageElement.src = senator.imgURL
+    imageElement.src = senator.imagePath
 
  personName.textContent = senator.first_name +" " + senator.last_name
 // personElement.textContent = senator.name
@@ -156,7 +156,7 @@ const revealRBanner = () => {
 const createCardRep = ((repArray)=>{
   removeCards()
   // revealRBanner()
-  repArray.forEach((rep)=>{
+  simpleReps.forEach((rep)=>{
     let personElement = document.createElement('div')
     let personName = document.createElement ('p')
     let imageElement = document.createElement ('img')
@@ -169,7 +169,7 @@ const createCardRep = ((repArray)=>{
     }
 
    
-    imageElement.src = rep.imgURL
+    imageElement.src = rep.imagePath
     personName.textContent = rep.first_name + " " + rep.last_name
     personElement.appendChild(personName)
     personElement.appendChild(imageElement)
