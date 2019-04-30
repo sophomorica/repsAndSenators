@@ -156,6 +156,8 @@ var allSenators = document.getElementById('senators')
 var allReps = document.getElementById('reps')
 var allDems = document.querySelector('#D')
 var allRepubs = document.getElementById('R')
+var allRepRBtn = document.getElementById('r')
+var allRepDBtn = document.getElementById('d')
 
 allSenators.addEventListener('click', createCardSen.bind(this, senators))
 allReps.addEventListener('click', createCardRep.bind(this, representatives))
