@@ -43,6 +43,12 @@ div{
   text-align: center;
 }
 
-.is-hidden{
+.is-hiddenS{
 visibility: hidden;
+}
+.is-hiddenR{
+  visibility: hidden;
+}
+.card.is-flipped {
+  transform: rotateY(180deg);
 }

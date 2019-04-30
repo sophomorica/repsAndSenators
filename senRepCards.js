@@ -165,8 +165,19 @@ var allRepubs = document.getElementById('R')
 var allRepRBtn = document.getElementById('r')
 var allRepDBtn = document.getElementById('d')
 
-allSenators.addEventListener('click', createCardSen.bind(this, senators))
-allReps.addEventListener('click', createCardRep.bind(this, representatives))
+allSenators.addEventListener('click', function(){
+  removeCards()
+  createCardSen(senators)
+  
+  allRepubs.classList.toggle('is-hidden')
+allDems.classList.toggle('is-hidden')
+})
+allReps.addEventListener('click', function(){
+removeCards()
+createCardRep(representatives)
+allRepRBtn.classList.toggle('is-hiddenR')
+allRepDBtn.classList.toggle('is-hiddenR')
+})
 
 allDems.addEventListener('click', function(){
   removeCards()
