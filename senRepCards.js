@@ -164,17 +164,24 @@ var allDems = document.querySelector('#D')
 var allRepubs = document.getElementById('R')
 var allRepRBtn = document.getElementById('r')
 var allRepDBtn = document.getElementById('d')
+var clearBtn = document.querySelector('#clearBtn')
 
 allSenators.addEventListener('click', function(){
   removeCards()
   createCardSen(senators)
-  
+  allDems.classList.toggle('is-hidden')
   allRepubs.classList.toggle('is-hidden')
-allDems.classList.toggle('is-hidden')
 })
+
 allReps.addEventListener('click', function(){
 removeCards()
 createCardRep(representatives)
+// if (allDems.className !== 'is-hidden'){
+//   allDems.classList.toggle('is-hidden')
+// }
+// if( allRepubs.className !=='is-hidden'){
+//   allRepubs.classList.toggle('is-hidden')
+// }
 allRepRBtn.classList.toggle('is-hiddenR')
 allRepDBtn.classList.toggle('is-hiddenR')
 })
@@ -194,4 +201,15 @@ allRepRBtn.addEventListener('click', function(){
 allRepDBtn.addEventListener('click', function(){
   removeCards()
   createCardRep(demFilterReps)
+})
+const removeBtns = () => {
+  let removeBtnDiv = document.querySelector(".senatorFilterBtns");
+  while (removeBtnDiv.firstChild) {
+      removeBtnDiv.toggle('is-hidden');
+  }
+}
+clearBtn.addEventListener('click',function(){
+  removeCards()
+  removeBtns()
+  
 })
