@@ -59,3 +59,11 @@ h1{
 .button{
   padding: 20px 40px 40px 40px;
 }
+.senatorBG{
+  padding-right: 100px;
+  padding-left: 100px;
+}
+.repBG{
+  padding-right: 80px;
+  padding-left: 80px;
+}
