@@ -13,12 +13,8 @@ const button_section = document.getElementsByClassName('button-section')
 
 //function---------------------
 const removeCards = () => {
-  // let removeRBanner = document.querySelector(".house")
-  // let removeSBanner = document.querySelector(".senate")
+  
   let removeDiv = document.querySelector(".container");
-  // if  (removeSBanner.classList !== 'sBanner-hidden'){
-  //   removeSBanner.className.add('sBanner-hidden')
-  // } 
   
   while (removeDiv.firstChild) {
       removeDiv.removeChild(removeDiv.firstChild);
@@ -67,7 +63,16 @@ const simpleSen = senators.map(senator =>{
 //   let image = document.createElement("img");
 //   image.className = "senateImage";
 // }
+const allMissedvotes = representatives.reduce((acc, rep) =>{
+  return acc + rep.missed_votes
+},0)
+console.log(allMissedvotes)
+const testArray = [5,10,15,20,25]
 
+const testResults = testArray.reduce((acc,num)=> {
+return acc + num
+},0 )
+console.log(testResults)
 //-------Functions to create the cards------------------------------------
 const createCardSen = ((senatorArray)=>{
   removeCards()
