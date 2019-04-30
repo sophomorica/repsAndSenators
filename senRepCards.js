@@ -63,10 +63,22 @@ const simpleSen = senators.map(senator =>{
 //   let image = document.createElement("img");
 //   image.className = "senateImage";
 // }
+const allVotes = representatives.reduce((acc,rep) => {
+  return acc + rep.total_votes 
+},0) 
+const allSenatorVotes = senators.reduce((acc,sen)=>{
+  return acc + sen.total_votes
+},0)
+const allSentorMiss = senators.reduce((acc, sen)=>{
+  return acc + sen.missed_votes
+},0)
+console.log(allSentorMiss)
+console.log("missed Votes = " + allSenatorVotes)
+console.log("All Votes = " + allVotes)
 const allMissedvotes = representatives.reduce((acc, rep) =>{
   return acc + rep.missed_votes
 },0)
-console.log(allMissedvotes)
+console.log("Missed Votes = " +allMissedvotes)
 const testArray = [5,10,15,20,25]
 
 const testResults = testArray.reduce((acc,num)=> {
