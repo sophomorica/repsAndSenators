@@ -59,19 +59,19 @@ const simpleSen = senators.map(senator =>{
   }
 })
 
-function cardFront (senatorArray){
-  let cardFront = document.createElement("div");
-  cardFront.className = "card__face card__face--front";
-  let figure = document.createElement("figure");
-  let caption = document.createElement("figcaption");
-  let image = document.createElement("img");
-  image.className = "senateImage";
-}
+// function cardFront (senatorArray){
+//   let cardFront = document.createElement("div");
+//   cardFront.className = "card__face card__face--front";
+//   let figure = document.createElement("figure");
+//   let caption = document.createElement("figcaption");
+//   let image = document.createElement("img");
+//   image.className = "senateImage";
+// }
 
 //-------Functions to create the cards------------------------------------
 const createCardSen = ((senatorArray)=>{
   removeCards()
-  revealSBanner()
+  // revealSBanner()
 
   //----------I wanted to create buttons dynamically but found out that the since the java script can't find the buttons before they are created I couldn't add any event listeners to it....perhaps node does-------------
 
@@ -138,7 +138,7 @@ const revealRBanner = () => {
  }
 const createCardRep = ((repArray)=>{
   removeCards()
-  revealRBanner()
+  // revealRBanner()
   repArray.forEach((rep)=>{
     let personElement = document.createElement('div')
     let personName = document.createElement ('p')
@@ -248,8 +248,8 @@ const removeBtns = () => {
      hiddenDem.classList.add('is-hiddenR')
    }
 }
-clearBtn.addEventListener('click',function(){
-  removeCards()
-  removeBtns()
+// clearBtn.addEventListener('click',function(){
+//   removeCards()
+//   removeBtns()
   
-})
+// })
