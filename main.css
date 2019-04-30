@@ -52,3 +52,10 @@ visibility: hidden;
 .card.is-flipped {
   transform: rotateY(180deg);
 }
+h1{
+  font-size: 80px;
+}
+
+.button{
+  padding: 20px 40px 40px 40px;
+}
